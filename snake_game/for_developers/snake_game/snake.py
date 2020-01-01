@@ -165,6 +165,7 @@ def final_game():
                     pygame.display.update()
                     pause = False
                     while not pause:
+                        pygame.mixer.music.pause()
                         for my_event in pygame.event.get():
                             if my_event.type == pygame.QUIT:
                                 ending_effect.play()
@@ -172,6 +173,7 @@ def final_game():
                                 pause = True
                             if my_event.type == pygame.KEYDOWN:
                                 if my_event.key == pygame.K_r:
+                                    pygame.mixer.music.unpause()
                                     pause = True
                 elif event.key == pygame.K_q or event.key == pygame.K_ESCAPE:
                     pygame.mixer.music.pause()
